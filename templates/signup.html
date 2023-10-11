@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/style1.css">
+    <title>Signup - Your Web App</title>
+</head>
+<body>
+    <header>
+        <h1>Signup</h1>
+    </header>
+        <main>
+
+
+            
+            <form action="{{ url_for('signup') }}" method="POST">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                </div>
+                <p><input type="submit" value="Sign Up"></p>
+            </form>
+            
+            <p>By creating an account you agree with our Terms of Service, Privacy Policy, and our default Notification Settings.</p>
+            <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+            <div>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class="flash-messages">
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+    
+    <main>
+        
+            <h1>Welcome, {{ username }}</h1>
+      
+        <!-- User-specific content goes here -->
+        <p>Welcome to your dashboard, {{ username }}!</p>
+        <p>Here, you can perform following tasks.</p>
+
+        <!-- Example links to different user-specific actions -->
+        <p><ul>
+            <li><a href="{{ url_for('forgery_detection') }}">Forgery Detection</a></li>
+            <li><a href="{{ url_for('home') }}">Upload & Process Image</a></li>
+    
+            <li><a href="{{ url_for('feedback') }}">Submit Feedback</a></li>
+        </ul></p>
+
+        <!-- Example content specific to user's actions -->
+        <div>
+            <!-- Display user's uploaded images or other user-specific information here -->
+        </div>
+        <p><a href="{{ url_for('logout') }}">Logout</a></p>
+    </main>
+</body>
+</html>
+
+

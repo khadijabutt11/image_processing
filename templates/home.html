@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/style1.css">
+
+    <title>Home - Your Web App</title>
+</head>
+<body>
+    <header>
+        
+        
+    </header>
+    <main>
+        <h1>Image Upload and Display</h1>
+        <br>
+        <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".jpg, .jpeg, .png">
+            <p><a><input type="submit" value="Upload"></a></p>
+        </form>
+       <div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class="flash-messages">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+        <!-- Display uploaded images here -->
+        <div class="image-container">
+            
+            <h2>Uploaded Images:</h2>
+            {% for image in uploaded_images %}
+                <img src="{{ url_for('image') }}" alt="Uploaded Image">
+            {% endfor %}
+        </div>
+        
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </main>
+</body>
+</html>
+
+

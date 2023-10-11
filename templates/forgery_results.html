@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgery Detection Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+<main>
+    <h1>Forgery Detection Results</h1>
+    
+    <!-- Check if there are results to display -->
+    {% if results %}
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Original Filename</th>
+                <th>Forgery Result</th>
+            </tr>
+            
+            <!-- Loop through the results and display each entry -->
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.id }}</td>
+                    <td>{{ result.original_filename }}</td>
+                    <td>{{ result.forgery_result }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No forgery detection results available.</p>
+    {% endif %}
+    <p><a href="{{ url_for('user_dashboard') }}">Back to Dashboard</a></p>
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+</main>
+</body>
+</html>

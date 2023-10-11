@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgery Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+    <header></header>
+<main>
+    <h1>Forgery Detection</h1>
+    <br>
+    <form action="{{ url_for('forgery_detection') }}" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="file">Upload Image:</label>
+            <input type="file" id="file" name="file" accept="image/*" required>
+        </div>
+        <div>
+            <p><a><input type="submit" value="Detect Forgery"></a></p>
+            
+        </div>
+    </form>
+    
+
+    <!-- Display forgery detection results if available -->
+    {% if forgery_result %}
+        <h2>Detection Result:</h2>
+        <p>{{ forgery_result }}</p>
+    {% endif %}
+
+    <!-- Provide a download link for the processed image if available -->
+    {% if processed_image_url %}
+        <h2>Processed Image:</h2>
+        <img src="{{ url_for('uploads',processed_image_url) }}" alt="Processed Image">
+        <p><a href="{{ url_for('uploads',processed_image_url) }}" download>Download Processed Image</a></p>
+    {% endif %}
+    <p><a href="{{ url_for('forgery_results') }}">Forgery Results</a></p>
+    <p><a href="{{ url_for('user_dashboard') }}">Back to Dashboard</a></p>
+</main>
+
+</body>
+</html>
+
