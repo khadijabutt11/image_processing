@@ -138,14 +138,14 @@ a:hover {
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
 }
 
 /* Basic styling */
 
 
 
-header {
+/*header {
     text-align: center;
     margin-top: 50px;
     margin-left: 300px;
@@ -263,4 +263,135 @@ a:hover {
     margin-bottom: 100px;
     border-radius: 50px;
 
+}*/
+
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+/* Basic styling */
+/* Header */
+header {
+    text-align: center;
+    margin: 50px 300px;
+    background-color: rgba(254, 255, 255, 0.639);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 30px;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background: url("https://cdn.pixabay.com/photo/2016/11/18/12/55/light-1834289_1280.jpg") no-repeat center center/cover;
+}
+
+/* Headings */
+h1 {
+    font-size: 28px;
+    color: #0a0b11d9;
+    text-align: center;
+}
+
+/* Main Content */
+main {
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 50px 500px 50px 50px;
+    width: 400px;
+    text-align: left;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #000000;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    outline: blue;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Paragraph Styles */
+p {
+    color: #000000;
+    margin-top: 10px;
+    text-align: center;
+    font-size: small;
+}
+
+/* Link Styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Flash Messages */
+.flash-messages {
+    list-style: none;
+    padding: 0;
+}
+
+.flash-messages li {
+    color: #333;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 5px 0;
 }
